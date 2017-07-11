@@ -43,7 +43,7 @@
 * **第一步**：在主项目的根目录下创建config.gradle文件
 * **第二步**：将我们需要的配置信息写入config.gradle文件，配置信息如下：
 ![](/screenshots/config.gradle.png)
-注意：我们此处对应的版本号和之前主项目与libs的一样。
+#### 注意 ####：我们此处对应的版本号和之前主项目与libs的一样。
 * **第三步**：在主项目根目录下的build.gradle文件中加入一句代码：
 ```java
     apply from: "config.gradle"
