@@ -7,8 +7,10 @@
     compile 'com.android.support:support-v4:25.1.0'
 ```
 但是不知道你们发现一些问题没有？比如以后v4版本号如果升级了怎么办？你可能会说直接手动改下版本号就好了，又不费多少精力。是的，只有这一个地方当然很简单，假设你项目里引用了三四个module，而这些module里也引用了v4包，那就要把所有依赖v4的包全部手动更改，这是一个项目，而如果你又是多个项目呢？这还只是一个v4包，假设又有多处地方依赖okhttp呢？而且下次所有的compileSdkVersion跟buildToolsVersion都要跟着升级呢？每次版本更新都要手动更改简直太麻烦了，而且还容易遗漏某些地方。
+
 下面我们看看常规的方式：
 ![](/screenshots/常规方式.png)
+
 此项目有主项目app和一个模块modulebase，对于个module目录下的build.gradle文件：
 ```java
     apply plugin: 'com.android.application'
@@ -39,7 +41,7 @@
     }
 ```
 这一段重复的配置，难道每新增一个libs，我们都需要去手动配置成一样的？有没有更好的方式呢？那么今天就来给大家提供一种解决方案完全解决这种问题。我们根本性的解决这个问题就是通过一个配置文件来管理所有的Gradle依赖。那么具体怎么实现呢？
-## 2. Gradle统一依赖管理的步骤： ##
+## 2. Gradle统一依赖管理的实现步骤： ##
 * **第一步**：在主项目的根目录下创建config.gradle文件
 * **第二步**：将我们需要的配置信息写入config.gradle文件，配置信息如下：
 ![](/screenshots/config.gradle.png)
