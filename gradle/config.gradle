@@ -1,0 +1,23 @@
+ext {
+
+    // 配置信息
+    android = [
+            compileSdkVersion: 28,
+            buildToolsVersion: "28.0.3",
+            minSdkVersion    : 15,
+            targetSdkVersion : 28,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    // 依赖第三方库版本
+    dependencies = [
+            supportV7   : 'com.android.support:appcompat-v7:28.0.0',
+            design      : 'com.android.support:design:28.0.0',
+            recyclerview: 'com.android.support:recyclerview-v7:28.0.0',
+            multidex    : 'com.android.support:multidex:1.0.3',
+            okhttp3     : 'com.squareup.okhttp3:okhttp:3.11.0',
+            eventbus    : 'org.greenrobot:eventbus:3.1.1'
+    ]
+
+}
